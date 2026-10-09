@@ -26,8 +26,18 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .answer-emoji{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:clamp(2.7rem,10vw,3.6rem);line-height:1.25;margin:0 0 12px;display:inline-block;animation:emoji-pop 280ms ease-out both;transform-origin:center}
 @keyframes emoji-pop{0%{opacity:0;transform:scale(.65)}65%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.answer-emoji{animation:none}}
-.roast{font-weight:650;color:#ffd0d7;margin:10px 0 16px}
 .confetti-layer{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;contain:strict}
 .confetti-layer i{position:absolute;top:-20px;left:var(--x);width:9px;height:15px;border-radius:2px;opacity:0;animation:confetti-fall var(--duration) var(--delay) ease-in both;will-change:transform,opacity}
 @keyframes confetti-fall{0%{opacity:0;transform:translate3d(0,0,0) rotate(0deg)}10%{opacity:.95}80%{opacity:.9}100%{opacity:0;transform:translate3d(var(--drift),105dvh,0) rotate(var(--turn))}}
 @media(prefers-reduced-motion:reduce){.confetti-layer{display:none}.confetti-layer i{animation:none}}
+.feedback-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px;margin-bottom:12px}
+.feedback-heading>strong{font-size:1rem}
+.feedback-heading .answer-emoji{font-size:2rem;line-height:1.1;margin:0}
+.answer-solution{background:#0b201b;border:1px solid #71a98a;border-left:4px solid #b9ee75;border-radius:12px;padding:16px;color:#efffed}
+.solution-label{font-size:.8rem;letter-spacing:1px;font-weight:750;color:#b9ee75;margin-bottom:12px}
+.solution-row{display:flex;align-items:baseline;gap:12px;margin:8px 0}
+.solution-language{flex:none;width:26px;font-size:.8rem;color:#a9c5b5;font-weight:650}
+.solution-value{font-size:clamp(1.6rem,6vw,2.1rem);line-height:1.25;overflow-wrap:anywhere;min-width:0}
+.answer-details{margin-top:14px;color:#b7c5d1;font-size:.9rem}
+.answer-details summary{cursor:pointer;min-height:44px;display:list-item;line-height:44px;width:max-content;max-width:100%;color:#d5e2ed}
+.answer-details p{margin:8px 0;overflow-wrap:anywhere}
