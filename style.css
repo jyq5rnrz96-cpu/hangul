@@ -41,3 +41,11 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .answer-details{margin-top:14px;color:#b7c5d1;font-size:.9rem}
 .answer-details summary{cursor:pointer;min-height:44px;display:list-item;line-height:44px;width:max-content;max-width:100%;color:#d5e2ed}
 .answer-details p{margin:8px 0;overflow-wrap:anywhere}
+.mnemonic{margin-top:14px;border:1px solid #41576b;background:#122330;border-radius:12px;color:#e3edf6;overflow:hidden}
+.mnemonic summary{cursor:pointer;padding:13px 14px;min-height:44px;box-sizing:border-box;line-height:1.4;font-weight:650;color:#c5e3ff;overflow-wrap:anywhere}
+.mnemonic summary:focus-visible{outline:2px solid #94cfff;outline-offset:-3px;border-radius:10px}
+.mnemonic[open] summary{border-bottom:1px solid #334b5e}
+.mnemonic-body{padding:0 14px 15px;line-height:1.6;font-size:.98rem}
+.mnemonic-body p{margin:12px 0}
+.mnemonic-word{font-weight:700;color:#d0eaff}
+.mnemonic-note,.mnemonic-body small{color:#a9bdcd;font-size:.88rem}
