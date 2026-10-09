@@ -23,3 +23,6 @@ dialog::backdrop{background:#000a}
 main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 #next{position:fixed;z-index:6;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-height) + 12px);width:calc(100% - 40px);max-width:852px;min-height:52px;box-shadow:0 0 0 10px #09131df5,0 -10px 30px #09131d;}
 [hidden]{display:none!important}
+.answer-emoji{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:clamp(2.7rem,10vw,3.6rem);line-height:1.25;margin:0 0 12px;display:inline-block;animation:emoji-pop 280ms ease-out both;transform-origin:center}
+@keyframes emoji-pop{0%{opacity:0;transform:scale(.65)}65%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.answer-emoji{animation:none}}
