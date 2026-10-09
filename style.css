@@ -26,3 +26,8 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .answer-emoji{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:clamp(2.7rem,10vw,3.6rem);line-height:1.25;margin:0 0 12px;display:inline-block;animation:emoji-pop 280ms ease-out both;transform-origin:center}
 @keyframes emoji-pop{0%{opacity:0;transform:scale(.65)}65%{opacity:1;transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.answer-emoji{animation:none}}
+.roast{font-weight:650;color:#ffd0d7;margin:10px 0 16px}
+.confetti-layer{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden;contain:strict}
+.confetti-layer i{position:absolute;top:-20px;left:var(--x);width:9px;height:15px;border-radius:2px;opacity:0;animation:confetti-fall var(--duration) var(--delay) ease-in both;will-change:transform,opacity}
+@keyframes confetti-fall{0%{opacity:0;transform:translate3d(0,0,0) rotate(0deg)}10%{opacity:.95}80%{opacity:.9}100%{opacity:0;transform:translate3d(var(--drift),105dvh,0) rotate(var(--turn))}}
+@media(prefers-reduced-motion:reduce){.confetti-layer{display:none}.confetti-layer i{animation:none}}
