@@ -1069,6 +1069,7 @@ const entries={
 };
 const normalize=s=>String(s??'').normalize('NFKC').toLocaleLowerCase('de').trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'');
 export function wordMnemonic(word){
+ if(typeof word.mnemonic==='string'&&word.mnemonic.trim())return{roman:word.roman||'',scene:word.mnemonic.trim(),note:'Das Bild ist eine Merkhilfe. Lies dazu das koreanische Wort und seine Umschrift mit.'};
  const key=normalize(word.ko);
  if(!Object.hasOwn(entries,key))return null;
  const entry=entries[key];
