@@ -53,3 +53,11 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .solution-pronunciation{margin:14px 0 0;padding-top:12px;border-top:1px solid #315645;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
 .solution-pronunciation span{font-size:.8rem;color:#a9c5b5}
 .solution-pronunciation strong{font-size:1.08rem;color:#d0eaff;overflow-wrap:anywhere}
+.round-grade{display:inline-block;padding:10px 14px;border-radius:12px;background:#243f4c;color:#ceefba;font-size:1.15rem;font-weight:700}
+.round-result .hint{color:#c2d2dd;margin-top:14px}
+.result-meter{height:10px;border-radius:12px;background:#30475a;overflow:hidden;margin-top:22px}
+.result-meter>div{height:100%;background:#b9ee75}
+.result-actions{display:grid;gap:12px}
+.grade-details summary{cursor:pointer;min-height:44px;line-height:1.5;font-weight:650}
+.grade-details dl>div{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #2b4052;flex-wrap:wrap}
+.grade-details dd{margin:0;color:#a9c5b5}
