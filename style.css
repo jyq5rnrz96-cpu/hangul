@@ -81,3 +81,10 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .day-entry.selected{border-color:#b9ee75;background:#1b3541}
 .day-entry small{display:block;font-size:12px;font-weight:400;margin-top:5px}
 .day-entry>strong{color:#b9ee75;white-space:nowrap}
+.translation-question{margin:26px 0 30px;letter-spacing:0;text-align:center}
+#questionDirection{font-size:11px;letter-spacing:.8px;line-height:1.5}
+.prompt-language{display:block;width:max-content;max-width:100%;margin:0 auto 12px;padding:5px 10px;border-radius:20px;background:#223e50;color:#b9dff9;font-size:11px;line-height:1.2;font-weight:650;letter-spacing:1px;text-transform:uppercase}
+.prompt-value{display:block;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.25;font-weight:750;letter-spacing:-.4px;overflow-wrap:anywhere;hyphens:auto;text-wrap:balance}
+.prompt-secondary{display:block;margin:20px auto 0;padding-top:18px;border-top:1px solid #2b4052;max-width:420px}
+.prompt-secondary .prompt-language{background:transparent;padding:0;color:#8fa8bb;margin-bottom:7px;font-size:10px}
+.prompt-translation{display:block;color:#aebfcc;font-size:1.1rem;font-weight:500;line-height:1.45;letter-spacing:0;overflow-wrap:anywhere;hyphens:auto;text-wrap:balance}

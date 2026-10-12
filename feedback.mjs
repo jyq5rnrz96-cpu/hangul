@@ -2,6 +2,10 @@ import{wordEmoji}from'./emojis.mjs';
 import{wordMnemonic}from'./mnemonics.mjs';
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const first=s=>String(s||'').split(';').map(v=>v.trim()).find(Boolean)||'';
+export function questionHtml(word){
+const en=first(word.en),de=first(word.de),primary=en||de,lang=en?'en':'de',label=en?'Englisch':'Deutsch';
+return '<span class="prompt-language">'+label+'</span><span class="prompt-value" lang="'+lang+'">'+escape(primary)+'</span>'+(en&&de?'<span class="prompt-secondary"><span class="prompt-language">Deutsch</span><span class="prompt-translation" lang="de">'+escape(de)+'</span></span>':'');
+}
 export function feedbackHtml(word,direction,correct,interval,options={}){
 const translations=direction==='ko-en'?[['en','EN',word.en],['de','DE',word.de]]:[['ko','KO',word.ko]];
 const visible=translations.filter(([, ,value])=>value&&value.trim());
