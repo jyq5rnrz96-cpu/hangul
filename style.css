@@ -94,7 +94,7 @@ body:has(main.flash-learning) .brand small{display:none}
 .flash-learning #end{min-height:34px;padding:7px 9px;font-size:12px}
 .flash-learning #questionProgress{font-size:12px;margin:5px 0 10px}
 .flash-learning>.card{padding:14px;margin-bottom:8px}
-.flash-card{position:relative;isolation:isolate;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:pointer;min-height:clamp(150px,30dvh,250px);padding:12px 14px;margin:10px 0 0;border:1px solid #375267;border-radius:18px;background:#112737;transition:transform .15s ease-out,opacity .15s ease-out;--swipe-progress:0;--swipe-tint:#112737}
+.flash-card{position:relative;isolation:isolate;-webkit-tap-highlight-color:transparent;display:flex;flex-direction:column;justify-content:center;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:pointer;min-height:clamp(260px,48svh,460px);padding:20px 14px 44px;margin:10px 0 0;border:1px solid #375267;border-radius:18px;background:#112737;transition:transform .15s ease-out,opacity .15s ease-out;--swipe-progress:0;--swipe-tint:#112737}
 .flash-card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--swipe-tint);opacity:calc(var(--swipe-progress) * .8);z-index:0;pointer-events:none}
 .flash-card>*{position:relative;z-index:1}
 .flash-card.swipe-moving{transition:none}
@@ -103,6 +103,7 @@ body:has(main.flash-learning) .brand small{display:none}
 .flash-card:focus-visible{outline:2px solid #94cfff;outline-offset:3px}
 .flash-learning #questionPrompt{margin:12px 0 20px}
 .flash-card-hint{text-align:center;font-size:12px;color:#a9c0d1;margin:14px 0 4px}
+.flash-card .flash-card-hint{position:absolute;left:12px;right:12px;bottom:14px;margin:0}
 #flashFace{text-align:center;padding:10px 0 0}
 .flash-learning .prompt-language{margin-bottom:8px}
 .flash-learning .prompt-secondary{margin-top:12px;padding-top:12px}
@@ -112,3 +113,8 @@ body:has(main.flash-learning) .brand small{display:none}
 #flashExtras .feedback{margin:8px 0 0;padding:0;border:0;background:transparent}
 .flash-learning>.hint{display:none}
 @media(prefers-reduced-motion:reduce){.flash-card{transition:none}}
+
+.flash-flipping{animation:flash-turn .2s ease-out}
+@keyframes flash-turn{from{rotate:y -18deg;filter:brightness(.75)}to{rotate:y 0deg;filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.flash-flipping{animation:none}}
+
