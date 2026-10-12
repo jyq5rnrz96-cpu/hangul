@@ -88,3 +88,27 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .prompt-secondary{display:block;margin:20px auto 0;padding-top:18px;border-top:1px solid #2b4052;max-width:420px}
 .prompt-secondary .prompt-language{background:transparent;padding:0;color:#8fa8bb;margin-bottom:7px;font-size:10px}
 .prompt-translation{display:block;color:#aebfcc;font-size:1.1rem;font-weight:500;line-height:1.45;letter-spacing:0;overflow-wrap:anywhere;hyphens:auto;text-wrap:balance}
+body:has(main.flash-learning) header{padding-top:10px;padding-bottom:4px}
+body:has(main.flash-learning) .brand small{display:none}
+.flash-learning{padding-top:4px;overflow-x:clip}
+.flash-learning #end{min-height:34px;padding:7px 9px;font-size:12px}
+.flash-learning #questionProgress{font-size:12px;margin:5px 0 10px}
+.flash-learning>.card{padding:14px;margin-bottom:8px}
+.flash-card{position:relative;isolation:isolate;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:pointer;min-height:clamp(150px,30dvh,250px);padding:12px 14px;margin:10px 0 0;border:1px solid #375267;border-radius:18px;background:#112737;transition:transform .15s ease-out,opacity .15s ease-out;--swipe-progress:0;--swipe-tint:#112737}
+.flash-card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--swipe-tint);opacity:calc(var(--swipe-progress) * .8);z-index:0;pointer-events:none}
+.flash-card>*{position:relative;z-index:1}
+.flash-card.swipe-moving{transition:none}
+.flash-card.swipe-known{--swipe-tint:#26854e;border-color:#80dba2}
+.flash-card.swipe-unknown{--swipe-tint:#b5394f;border-color:#ee8896}
+.flash-card:focus-visible{outline:2px solid #94cfff;outline-offset:3px}
+.flash-learning #questionPrompt{margin:12px 0 20px}
+.flash-card-hint{text-align:center;font-size:12px;color:#a9c0d1;margin:14px 0 4px}
+#flashFace{text-align:center;padding:10px 0 0}
+.flash-learning .prompt-language{margin-bottom:8px}
+.flash-learning .prompt-secondary{margin-top:12px;padding-top:12px}
+.flash-roman{font-size:16px;color:#c6e7ff;margin:12px 0 0}
+.flash-origin{font-size:12px;color:#9fb4c4;margin:14px 0 0;overflow-wrap:anywhere}
+#flashExtras .feedback-heading,#flashExtras .answer-solution{display:none}
+#flashExtras .feedback{margin:8px 0 0;padding:0;border:0;background:transparent}
+.flash-learning>.hint{display:none}
+@media(prefers-reduced-motion:reduce){.flash-card{transition:none}}

@@ -6,6 +6,11 @@ export function questionHtml(word){
 const en=first(word.en),de=first(word.de),primary=en||de,lang=en?'en':'de',label=en?'Englisch':'Deutsch';
 return '<span class="prompt-language">'+label+'</span><span class="prompt-value" lang="'+lang+'">'+escape(primary)+'</span>'+(en&&de?'<span class="prompt-secondary"><span class="prompt-language">Deutsch</span><span class="prompt-translation" lang="de">'+escape(de)+'</span></span>':'');
 }
+export function flashAnswerHtml(word,direction){
+const origin=direction==='ko-en'?word.ko:first(word.en)||first(word.de);
+const solution=direction==='ko-en'?questionHtml(word):'<span class="prompt-language">Koreanisch</span><span class="prompt-value" lang="ko">'+escape(word.ko)+'</span>';
+return '<div id="flashAnswerTitle">'+solution+'</div>'+(word.roman?'<p class="flash-roman">'+escape(word.roman)+'</p>':'')+'<p class="flash-origin">'+escape(origin)+'</p>';
+}
 export function feedbackHtml(word,direction,correct,interval,options={}){
 const translations=direction==='ko-en'?[['en','EN',word.en],['de','DE',word.de]]:[['ko','KO',word.ko]];
 const visible=translations.filter(([, ,value])=>value&&value.trim());
