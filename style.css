@@ -61,3 +61,7 @@ main.learning{padding-bottom:calc(var(--nav-height) + 100px)}
 .grade-details summary{cursor:pointer;min-height:44px;line-height:1.5;font-weight:650}
 .grade-details dl>div{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid #2b4052;flex-wrap:wrap}
 .grade-details dd{margin:0;color:#a9c5b5}
+
+.feedback.revealed{background:#182f40;border-color:#456984;color:#e3effa}
+.flash-rating{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.flash-rating button{min-height:56px;padding:14px 10px}
