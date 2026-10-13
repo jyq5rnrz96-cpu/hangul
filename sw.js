@@ -1,8 +1,8 @@
-const CACHE='hangul-v23-flash1';
+const CACHE='hangul-v24-test1';
 const FILES=['./','./index.html','./style.css','./app.js','./dashboard.mjs','./touch.mjs','./core.mjs','./learning.mjs','./swipe.mjs','./statistics.mjs','./emojis.mjs','./reactions.mjs','./feedback.mjs','./mnemonics.mjs','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
 async function freshFiles(){
  const responses=await Promise.all(FILES.map(async file=>{const url=new URL(file,self.location.href);url.searchParams.set('__hangul_fresh',CACHE);const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('App-Datei fehlt: '+file);return[file,response];}));
- if(!(await responses.find(([f])=>f==='./app.js')[1].clone().text()).includes('HANGUL_FLASH_DEFAULT_V23'))throw Error('App-Version ist noch nicht vollständig veröffentlicht.');
+ if(!(await responses.find(([f])=>f==='./app.js')[1].clone().text()).includes('HANGUL_TEST_V24'))throw Error('App-Version ist noch nicht vollständig veröffentlicht.');
  if(!(await responses.find(([f])=>f==='./feedback.mjs')[1].clone().text()).includes('flashAnswerHtml'))throw Error('Auswertungsdatei ist noch nicht aktuell.');
  if(!(await responses.find(([f])=>f==='./style.css')[1].clone().text()).includes('HANGUL_START_V22'))throw Error('Die Darstellung ist noch nicht aktuell.');
  if(!(await responses.find(([f])=>f==='./dashboard.mjs')[1].clone().text()).includes('HANGUL_DASHBOARD_V20'))throw Error('Die Kategorien-Datei fehlt.');
