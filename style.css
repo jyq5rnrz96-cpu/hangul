@@ -173,3 +173,8 @@ body:has(main.flash-learning) .brand small{display:none}
 .progress-results{display:flex;gap:14px;font-size:10px;margin:7px 0 0}
 .correct-count{color:#91dfb3}.wrong-count{color:#f3a5b2}
 .result-sequence h2{font-size:17px;margin:0 0 14px}.result-sequence .hint{font-size:11px;margin:12px 0 0}
+
+/* HANGUL_START_V22 */
+.settings-start{margin-top:22px;padding-top:16px;border-top:1px solid #2b4052}
+.settings-start .hint{font-size:12px;margin:0 0 12px}
+.settings-start button{background:#a5d8ed;color:#102b40;min-height:52px;display:flex;align-items:center;justify-content:space-between;touch-action:manipulation}
