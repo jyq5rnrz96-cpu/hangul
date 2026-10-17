@@ -211,3 +211,8 @@ nav button{min-width:0;width:auto;flex:1;max-width:140px;touch-action:manipulati
 .postcard-grid{display:grid;gap:18px;margin-bottom:24px}.postcard{border:1px solid #425e69;border-radius:18px;overflow:hidden;background:#182c38}.postcard>svg{width:100%;height:auto;display:block}.postcard>div{padding:17px}.postcard-mark{font-size:9px;letter-spacing:1.7px;color:#a3cfc4;border:1px dashed #658c85;padding:5px 7px;display:inline-block}.postcard h2{font-size:24px;margin:14px 0 7px}.postcard p{font-size:12px;color:#b8cbd1;margin:0;line-height:1.6}.postcard.locked>svg{filter:grayscale(.8);opacity:.45}.postcard.locked .postcard-mark{color:#9eb7c3;border-color:#4b6776}.journey-rules{font-size:11px;line-height:1.7;margin-top:18px}
 .round-comparison{border-color:#4d746c;background:#173236}.round-comparison .eyebrow{font-size:10px;letter-spacing:1.2px;color:#abcfc6}.round-comparison h2{font-size:23px;margin:12px 0}.round-comparison p{font-size:14px}.round-comparison small{font-size:10px;color:#a7bfc0;line-height:1.6;display:block}.round-comparison .improved-words{color:#c0e7bd}
 @media(min-width:700px){.postcard-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-route{justify-content:flex-start;gap:18px;font-size:13px}.journey-route span{padding:10px 16px}.mission-row b{font-size:14px}}
+
+/* HANGUL_HARD_STYLE_V28 */
+.hard-toggle{display:block;margin:18px auto 4px;min-height:44px;border:1px solid #6f6252;border-radius:12px;padding:10px 14px;background:#302e2a;color:#efd6b7;font-size:12px;line-height:1.4;touch-action:manipulation;max-width:100%;white-space:normal}
+.hard-toggle.is-hard{background:#253e3d;border-color:#688e7e;color:#c8e4d3}.hard-toggle:disabled{opacity:.6}
+.hard-word-label{margin-left:6px;background:#3a322a;color:#efd6b7}
