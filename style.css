@@ -248,3 +248,20 @@ nav button{min-width:0;width:auto;flex:1;max-width:140px;touch-action:manipulati
 @media(max-width:540px){.brand .brand-bird{width:44px;height:44px;flex-basis:44px}.brand>span{font-size:23px}.season-panel{padding:13px 12px;gap:8px}.season-panel b{font-size:15px}.season-panel small{max-width:170px}.season-panel button{padding:10px;font-size:11px}}
 @media(prefers-reduced-motion:reduce){.season-fog,.bird-celebrating .season-bird,.bird-celebrating .brand-bird{animation:none!important}}
 @media(max-width:380px){.brand small{display:none}.badge{white-space:nowrap}.brand{min-width:0}}
+
+/* HANGUL_COURTYARD_STYLE_V30 */
+.garden-scene[data-courtyard]{aspect-ratio:auto;background:#182b36;border:1px solid #42565c;overflow:hidden;--cy-sky-top:#182b36;--cy-sky-bottom:#263b45;--cy-grass-light:#8d9b80;--cy-grass-dark:#617e71;--cy-paving:#b6b7a3;--cy-window:#f1cd92;--cy-moon:#dce6cc}
+[data-season=halloween] .garden-scene[data-courtyard]{background:#211d31;border-color:#4e465c;--cy-sky-top:#211d31;--cy-sky-bottom:#353045;--cy-grass-light:#7e8a7a;--cy-grass-dark:#536c64;--cy-paving:#b2a99a;--cy-window:#f9c98d;--cy-moon:#ebd9b3}
+.garden-scene[data-courtyard]::after{display:none}
+.garden-scene[data-courtyard] .courtyard-art{width:100%;height:auto;display:block;aspect-ratio:960/730}
+.courtyard-caption{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;padding:0 16px 19px;font-size:11px;letter-spacing:.25px;color:#d7ded3;margin-top:-7px}
+.courtyard-caption>span:last-child{display:block;flex-basis:100%;text-align:center;color:#a8b5af;font-size:10px;letter-spacing:0}
+.courtyard-caption-dot{height:5px;width:5px;border-radius:50%;background:#d7ba85;box-shadow:0 0 8px #d7ba8555}
+.courtyard-halloween{display:none}
+[data-season=halloween] .courtyard-halloween{display:block}
+.courtyard-bird{transform-origin:0 0}
+.bird-celebrating .courtyard-bird{animation:bird-harvest 1.3s ease-in-out}
+.courtyard-fireflies{animation:courtyard-glimmer 5s ease-in-out infinite alternate}
+@keyframes courtyard-glimmer{to{opacity:.2}}
+@media(min-width:700px){.garden-scene[data-courtyard] .courtyard-art{max-height:640px;object-fit:contain}}
+@media(prefers-reduced-motion:reduce){.courtyard-fireflies,.bird-celebrating .courtyard-bird{animation:none!important}}

@@ -1,10 +1,10 @@
-const CACHE='hangul-v29-halloween1';
-const FILES=['./','./index.html','./style.css','./app.js','./hard.mjs','./season.mjs','./gat-bird.svg','./halloween-garden.svg','./garden.mjs','./farm.mjs','./farm-view.mjs','./journey.mjs','./journey-view.mjs','./hanok-garden.png','./dashboard.mjs','./touch.mjs','./core.mjs','./learning.mjs','./swipe.mjs','./statistics.mjs','./emojis.mjs','./reactions.mjs','./feedback.mjs','./mnemonics.mjs','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
+const CACHE='hangul-v30-courtyard1';
+const FILES=['./','./index.html','./style.css','./app.js','./hard.mjs','./season.mjs','./courtyard.mjs','./gat-bird.svg','./halloween-garden.svg','./garden.mjs','./farm.mjs','./farm-view.mjs','./journey.mjs','./journey-view.mjs','./hanok-garden.png','./dashboard.mjs','./touch.mjs','./core.mjs','./learning.mjs','./swipe.mjs','./statistics.mjs','./emojis.mjs','./reactions.mjs','./feedback.mjs','./mnemonics.mjs','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
 async function freshFiles(){
  const responses=await Promise.all(FILES.map(async file=>{const url=new URL(file,self.location.href);url.searchParams.set('__hangul_fresh',CACHE);const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('App-Datei fehlt: '+file);return[file,response];}));
- if(!(await responses.find(([f])=>f==='./app.js')[1].clone().text()).includes('HANGUL_SEASON_APP_V29'))throw Error('App-Version ist noch nicht vollständig veröffentlicht.');
+ if(!(await responses.find(([f])=>f==='./app.js')[1].clone().text()).includes('HANGUL_COURTYARD_APP_V30'))throw Error('App-Version ist noch nicht vollständig veröffentlicht.');
  if(!(await responses.find(([f])=>f==='./feedback.mjs')[1].clone().text()).includes('flashAnswerHtml'))throw Error('Auswertungsdatei ist noch nicht aktuell.');
- if(!(await responses.find(([f])=>f==='./style.css')[1].clone().text()).includes('HANGUL_SEASON_STYLE_V29'))throw Error('Die Darstellung ist noch nicht aktuell.');
+ if(!(await responses.find(([f])=>f==='./style.css')[1].clone().text()).includes('HANGUL_COURTYARD_STYLE_V30'))throw Error('Die Darstellung ist noch nicht aktuell.');
  if(!(await responses.find(([f])=>f==='./dashboard.mjs')[1].clone().text()).includes('HANGUL_DASHBOARD_V20'))throw Error('Die Kategorien-Datei fehlt.');
  if(!(await responses.find(([f])=>f==='./touch.mjs')[1].clone().text()).includes('HANGUL_TOUCH_V21'))throw Error('Die Touch-Datei fehlt.');
  if(!(await responses.find(([f])=>f==='./garden.mjs')[1].clone().text()).includes('HANGUL_GARDEN_V26'))throw Error('Die Garten-Datei fehlt.');
@@ -12,7 +12,7 @@ async function freshFiles(){
  if(!(await responses.find(([f])=>f==='./farm.mjs')[1].clone().text()).includes('HANGUL_FARM_V26')||!(await responses.find(([f])=>f==='./farm-view.mjs')[1].clone().text()).includes('HANGUL_FARM_VIEW_V26'))throw Error('Die Ernte-Dateien fehlen.');
  if(!(await responses.find(([f])=>f==='./journey.mjs')[1].clone().text()).includes('HANGUL_JOURNEY_V27')||!(await responses.find(([f])=>f==='./journey-view.mjs')[1].clone().text()).includes('HANGUL_JOURNEY_VIEW_V27'))throw Error('Die Reisebuch-Dateien fehlen.');
  if(!(await responses.find(([f])=>f==='./hard.mjs')[1].clone().text()).includes('HANGUL_HARD_V28')||!(await responses.find(([f])=>f==='./core.mjs')[1].clone().text()).includes('HANGUL_HARD_CORE_V28'))throw Error('Die Schwer-Dateien fehlen.');
- for(const [file,marker] of [['./season.mjs','HANGUL_SEASON_V29'],['./garden.mjs','HANGUL_SEASON_GARDEN_V29'],['./gat-bird.svg','HANGUL_GAT_BIRD_V29'],['./halloween-garden.svg','HANGUL_HALLOWEEN_GARDEN_V29']]){if(!(await responses.find(([f])=>f===file)[1].clone().text()).includes(marker))throw Error('Eine Halloween-Datei fehlt oder ist veraltet: '+file);}
+ for(const [file,marker] of [['./courtyard.mjs','HANGUL_COURTYARD_V30'],['./garden.mjs','HANGUL_COURTYARD_GARDEN_V30'],['./season.mjs','HANGUL_SEASON_V29'],['./garden.mjs','HANGUL_SEASON_GARDEN_V29'],['./gat-bird.svg','HANGUL_GAT_BIRD_V29'],['./halloween-garden.svg','HANGUL_HALLOWEEN_GARDEN_V29']]){if(!(await responses.find(([f])=>f===file)[1].clone().text()).includes(marker))throw Error('Eine Halloween-Datei fehlt oder ist veraltet: '+file);}
  const cache=await caches.open(CACHE);await Promise.all(responses.map(([file,response])=>cache.put(new URL(file,self.location.href).href,response)));
 }
 self.addEventListener('install',e=>e.waitUntil(freshFiles().then(()=>self.skipWaiting())));
