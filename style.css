@@ -265,3 +265,8 @@ nav button{min-width:0;width:auto;flex:1;max-width:140px;touch-action:manipulati
 @keyframes courtyard-glimmer{to{opacity:.2}}
 @media(min-width:700px){.garden-scene[data-courtyard] .courtyard-art{max-height:640px;object-fit:contain}}
 @media(prefers-reduced-motion:reduce){.courtyard-fireflies,.bird-celebrating .courtyard-bird{animation:none!important}}
+
+/* HANGUL_PUMPKIN_STYLE_V31 */
+.brand .brand-bird{width:64px;height:74px;flex-basis:64px;object-fit:contain}
+.brand{gap:10px}
+@media(max-width:540px){.brand .brand-bird{width:58px;height:66px;flex-basis:58px}.brand small{display:none}.brand{gap:8px}header{padding-top:12px;padding-bottom:8px}body:has(main.flash-learning) .brand .brand-bird{width:46px;height:54px;flex-basis:46px}}
