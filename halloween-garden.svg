@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" fill="none">
+<!-- HANGUL_HALLOWEEN_GARDEN_V29: original seasonal courtyard -->
+<defs>
+ <linearGradient id="sky" x2="0" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#171329"/><stop offset=".5" stop-color="#453052"/><stop offset="1" stop-color="#192833"/></linearGradient>
+ <radialGradient id="moon"><stop stop-color="#fff5d0" stop-opacity=".3"/><stop offset="1" stop-color="#ffdda6" stop-opacity="0"/></radialGradient>
+ <linearGradient id="ground" x2="0" y1="380" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#253344"/><stop offset="1" stop-color="#131c2b"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#ffbd65" stop-opacity=".45"/><stop offset="1" stop-color="#ff9f43" stop-opacity="0"/></radialGradient>
+ <linearGradient id="pumpkin"><stop stop-color="#c95d37"/><stop offset=".5" stop-color="#eea05b"/><stop offset="1" stop-color="#aa4236"/></linearGradient>
+ <g id="lantern"><path d="M0 0v30" stroke="#a08082" stroke-width="2"/><circle cy="60" r="70" fill="url(#glow)"/><path d="M-16 32q-10 28 0 53h32q10-25 0-53Z" fill="#f5b074"/><path d="M-6 33q-8 26 0 51m12-51q8 26 0 51" stroke="#b57264" stroke-width="2"/><path d="M-18 31h36m-36 55h36M0 87v12m-5 0h10" stroke="#59444e" stroke-width="5" stroke-linecap="round"/></g>
+ <g id="pump"><ellipse cy="17" rx="53" ry="10" fill="#080e1d" opacity=".4"/><path d="m-2-30 6-13 10-2" stroke="#8b9e6b" stroke-width="6" stroke-linecap="round"/><ellipse cy="-4" rx="43" ry="33" fill="url(#pumpkin)"/><path d="M-14-34q-22 30 0 61m28-61q22 30 0 61M0-35v63" stroke="#ad523b" stroke-width="2" opacity=".65"/><path d="m-27-9 14-10 4 14Zm37 4 4-14 14 10ZM-21 7q20 19 43 0l-9 18H-10Z" fill="#ffe1a1"/><path d="M-4 8v8m16-5v9" stroke="#ad523b" stroke-width="4"/></g>
+</defs>
+<path fill="url(#sky)" d="M0 0h800v640H0z"/>
+<circle cx="615" cy="116" r="130" fill="url(#moon)"/><circle cx="615" cy="116" r="43" fill="#f6dfb1"/><path d="M600 87q-25 40 19 66" stroke="#e4c49e" stroke-width="7" opacity=".4"/>
+<g fill="#ddc9e4"><circle cx="80" cy="67" r="2"/><circle cx="290" cy="91" r="2"/><circle cx="443" cy="42" r="2"/><circle cx="714" cy="46" r="2"/><circle cx="504" cy="127" r="1.5"/><circle cx="172" cy="132" r="1.5"/><circle cx="747" cy="161" r="1.5"/></g>
+<path d="m0 280 100-98 71 67 102-116 134 126 89-85 124 110 98-82 82 78v133H0Z" fill="#28263d"/><path d="m0 330 123-74 151 71 118-67 137 86 129-85 142 69v129H0Z" fill="#302e43"/>
+<path d="M0 340h800v112H0Z" fill="#3d3547"/><path d="m0 335 800-4v19H0Z" fill="#665564"/>
+<g stroke="#786271" stroke-opacity=".35"><path d="M0 378h800M0 416h800M70 350v28m100 0v38m100-66v28m100 0v38m100-66v28m100 0v38m100-66v28"/></g>
+<path d="M0 440q200-45 400-10 210-28 400 2v208H0Z" fill="url(#ground)"/>
+<path d="m365 439 53-2 131 203H216Z" fill="#65566a" opacity=".35"/><g stroke="#af8a8e" stroke-opacity=".2" stroke-width="3"><path d="m341 480 103-2m-131 40 155 1m-187 50 216-1m-249 47 276 4"/></g>
+<!-- A distant roof and gate form the background; purchased buildings remain separate. -->
+<path d="M245 251h305v118H245Z" fill="#332b3b"/><path d="M271 277h251v92H271Z" fill="#4d3846"/><path d="M284 283h74v86h-74zm151 0h74v86h-74Z" fill="#dca274" opacity=".6"/>
+<g stroke="#634957" stroke-width="5"><path d="M308 281v89m25-89v89m125-89v89m25-89v89M280 310h80m-80 30h80m74-30h80m-80 30h80"/></g>
+<path d="M223 262q54-25 76-62h196q23 37 79 62-174 26-351 0Z" fill="#172233" stroke="#6f627b" stroke-width="3"/>
+<path d="M237 258q162 15 321-1M297 207q102 10 198 0" stroke="#998095" stroke-width="3"/>
+<path d="m315 212-29 48m59-47-15 49m44-48-4 49m36-49 4 49m25-50 18 49m10-49 32 46" stroke="#4d4b64" stroke-width="3"/>
+<path d="M266 269v137m259-137v137" stroke="#78525c" stroke-width="10"/>
+<use href="#lantern" transform="translate(204 275) scale(.8)"/><use href="#lantern" transform="translate(591 276) scale(.8)"/>
+<!-- Bare branches, lantern perch and friendly pumpkins. -->
+<path d="M32 464q49-130 27-244m-1 91-48-40m50 70 43-58m-40-23 33-55m-39 22-30-33M770 459q-39-133-24-245m3 87 46-48m-46 79-40-48" stroke="#282435" stroke-width="12" stroke-linecap="round"/>
+<path d="M640 410V229m-42 0h87" stroke="#55465d" stroke-width="8" stroke-linecap="round"/><use href="#lantern" transform="translate(666 230) scale(.7)"/>
+<g fill="#c47953"><path d="m75 247 15-5-8 18-12-3Zm632 44 13-7-4 20-12-2ZM97 389l18 1-12 13-12-6Z"/></g>
+<circle cx="115" cy="517" r="90" fill="url(#glow)"/><circle cx="703" cy="482" r="75" fill="url(#glow)"/>
+<use href="#pump" transform="translate(104 527) scale(1.1)"/><use href="#pump" transform="translate(172 546) scale(.67)"/><use href="#pump" transform="translate(707 491) scale(.9)"/>
+<g fill="#aaa0b8" opacity=".08"><ellipse cx="170" cy="590" rx="260" ry="29"/><ellipse cx="650" cy="567" rx="290" ry="24"/></g>
+<g fill="#1a1d2e"><path d="M462 96q-14-18-27-8 15 0 18 15l9-3 10 3q3-15 18-15-14-10-28 8ZM129 155q-11-14-21-6 12 0 14 12l7-3 8 3q2-12 14-12-11-8-22 6Z"/></g>
+</svg>

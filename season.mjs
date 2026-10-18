@@ -1,0 +1,11 @@
+// HANGUL_SEASON_V29
+// A purely cosmetic preference. No vocabulary, learning or reward data is changed.
+const KEY='hangul-season-v29';
+let season='halloween',flightTimer;
+try{const saved=localStorage.getItem(KEY);if(['normal','halloween'].includes(saved))season=saved;}catch{}
+export function seasonPanelHtml(){return'<section class="season-panel" aria-label="Design wählen"><div><span class="eyebrow">DEINE STIMMUNG</span><b>Nächte in Seoul</b><small>Ein kleiner Vogel mit Gat begleitet dich.</small></div><button type="button" data-season-toggle aria-pressed="'+String(season==='halloween')+'">'+(season==='halloween'?'🎃 Halloween an':'☾ Halloween aus')+'</button><span class="season-status sr-only" role="status"></span></section>';}
+export function seasonSceneHtml(){return'<div class="season-scenery" aria-hidden="true"><div class="season-fog"></div><img class="season-bird" src="./gat-bird.svg" alt="" width="180" height="180"></div>';}
+function apply(){document.documentElement.dataset.season=season;document.querySelectorAll('[data-season-toggle]').forEach(button=>{button.setAttribute('aria-pressed',String(season==='halloween'));button.textContent=season==='halloween'?'🎃 Halloween an':'☾ Halloween aus';});}
+export function initSeason(){const brand=document.querySelector('.brand');if(brand){brand.innerHTML='<img class="brand-bird" src="./gat-bird.svg" alt="Elster mit koreanischem Gat" width="54" height="54"><span>hangul<small>DEIN KOREANISCH. JEDEN TAG.</small></span>';brand.setAttribute('aria-label','Hangul · zur Lernstartseite');}apply();}
+export function bindSeasonControls(root){root.querySelectorAll('[data-season-toggle]').forEach(button=>{button.onclick=()=>{season=season==='halloween'?'normal':'halloween';try{localStorage.setItem(KEY,season);}catch{}apply();root.querySelectorAll('.season-status').forEach(status=>status.textContent=season==='halloween'?'Halloween-Design aktiviert.':'Normales Design aktiviert.');};});}
+export function celebrateHarvest(){clearTimeout(flightTimer);document.body.classList.remove('bird-celebrating');void document.body.offsetWidth;document.body.classList.add('bird-celebrating');flightTimer=setTimeout(()=>document.body.classList.remove('bird-celebrating'),1400);}

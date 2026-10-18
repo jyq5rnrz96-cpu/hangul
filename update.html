@@ -3,13 +3,13 @@ async function updateApp(){
 const status=document.querySelector('#status'),retry=document.querySelector('#retry');retry.hidden=true;
 try{
  if(!('serviceWorker'in navigator))throw Error('Bitte diese Seite in Safari oder einem unterstützten Browser öffnen.');
- const check=new URL('./app.js',location.href);check.searchParams.set('__hangul_fresh',Date.now());const response=await fetch(check,{cache:'no-store'});if(!response.ok||!(await response.text()).includes('HANGUL_HARD_APP_V28'))throw Error('v28 ist hier noch nicht vollständig veröffentlicht. Bitte die GitHub-Bereitstellung abwarten und erneut versuchen.');
+ const check=new URL('./app.js',location.href);check.searchParams.set('__hangul_fresh',Date.now());const response=await fetch(check,{cache:'no-store'});if(!response.ok||!(await response.text()).includes('HANGUL_SEASON_APP_V29'))throw Error('v29 ist hier noch nicht vollständig veröffentlicht. Bitte die GitHub-Bereitstellung abwarten und erneut versuchen.');
  status.textContent='Die App-Dateien werden erneuert. Bitte diese Seite geöffnet lassen …';
- const worker=new URL('./sw.js',location.href);worker.searchParams.set('release','v28-hard1');
+ const worker=new URL('./sw.js',location.href);worker.searchParams.set('release','v29-halloween1');
  const registration=await navigator.serviceWorker.register(worker.href,{scope:new URL('./',location.href).href,updateViaCache:'none'});
  await registration.update();const candidate=registration.installing||registration.waiting||registration.active;if(!candidate||candidate.scriptURL!==worker.href)throw Error('Die neuen Dateien sind noch nicht vollständig bereitgestellt. Bitte erneut versuchen.');
  await new Promise((resolve,reject)=>{let timer;const inspect=()=>{if(candidate.state==='activated'){clearTimeout(timer);resolve();}else if(candidate.state==='redundant'){clearTimeout(timer);reject(Error('Eine App-Datei fehlt oder wurde noch nicht vollständig bereitgestellt. Bitte erneut versuchen.'));}};candidate.addEventListener('statechange',inspect);timer=setTimeout(()=>reject(Error('Aktualisierung dauert zu lange. Prüfe deine Internetverbindung und versuche es erneut.')),45000);inspect();});
- status.textContent='Aktualisiert auf v28. Die App wird geöffnet …';const target=new URL('./',location.href);target.searchParams.set('updated','v28-hard1');location.replace(target.href);
+ status.textContent='Aktualisiert auf v29. Die App wird geöffnet …';const target=new URL('./',location.href);target.searchParams.set('updated','v29-halloween1');location.replace(target.href);
 }catch(error){status.textContent=error.message;retry.hidden=false;}
 }
 document.querySelector('#retry').onclick=updateApp;updateApp();
