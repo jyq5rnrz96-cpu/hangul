@@ -1,3 +1,5 @@
+// HANGUL_VILLAGE_SCENE_BETA_0_3_1
+import{villageMapHtml}from'./village.mjs';
 // HANGUL_COURTYARD_V30
 // One coherent isometric drawing. Geometry, planting beds and buildings share
 // the same ground plane, scale, light and materials; no positioned image layers.
@@ -11,10 +13,10 @@ function block(u,v,w,d,z,h,top,front,side){return polygon([p(u,v+d,z),p(u+w,v+d,
 const shadow=(u,v,w,d)=>tile(u+.2,v+.3,w,d,1,'#080c1a','opacity=".24" filter="url(#cy-soft)"');
 const flower=(x,y,color,r=3)=>`<g fill="${color}">${Array.from({length:5},(_,i)=>{const a=i*Math.PI*2/5;return`<ellipse cx="${x+Math.sin(a)*r}" cy="${y+Math.cos(a)*r}" rx="${r*.8}" ry="${r*1.1}" transform="rotate(${-i*72} ${x+Math.sin(a)*r} ${y+Math.cos(a)*r})"/>`;}).join('')}<circle cx="${x}" cy="${y}" r="${r*.5}" fill="#f6cf87"/></g>`;
 function stone(u,v,size=1){const[x,y]=p(u,v);return`<g>${polygon([[x-10*size,y],[x-6*size,y-12*size],[x+5*size,y-16*size],[x+13*size,y-5*size],[x+9*size,y+3*size]],'#697d79')}${polygon([[x-10*size,y],[x-6*size,y-12*size],[x+1*size,y-7*size],[x+9*size,y+3*size]],'#85978a')}${path(`M${x-5*size} ${y-9*size}l7 -3`,'#c4c3a2',1,'opacity=".5"')}</g>`;}
-function pine(u,v,size=1){const[x,y]=p(u,v);return`<g class="courtyard-tree"><ellipse cx="${x+12}" cy="${y+5}" rx="${30*size}" ry="${9*size}" fill="#091b22" opacity=".2"/><g transform="translate(${x} ${y}) scale(${size})">${path('M0 0Q-9-46 5-88M-2-33l-25-20M0-52l30-19M2-68l-17-18','#67564d',7)}${[[-26,-59,24,12],[27,-77,28,13],[-11,-91,30,15],[9,-113,23,12]].map(([cx,cy,rx,ry])=>`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="#335c58"/><path d="M${cx-rx+6} ${cy-2}q${rx} -13 ${rx*1.6} -3" stroke="#72947b" stroke-width="3" fill="none" opacity=".55"/>`).join('')}</g></g>`;}
+function pine(u,v,size=1){const[x,y]=p(u,v);return '<g class="courtyard-tree"><ellipse cx="'+(x+7)+'" cy="'+(y+4)+'" rx="'+(32*size)+'" ry="'+(11*size)+'" fill="#244a3c" opacity=".24"/><g transform="translate('+x+' '+y+') scale('+size+')">'+path('M0 0Q-9-39 1-77M-1-27l-24-20M0-43l22-17','#916349',8)+'<g class="village-tree-crown">'+[[-22,-52,25,15],[24,-69,29,18],[-12,-83,32,19],[4,-105,25,17]].map(([cx,cy,rx,ry],i)=>'<ellipse cx="'+cx+'" cy="'+(cy+4)+'" rx="'+rx+'" ry="'+ry+'" fill="#315d48"/><ellipse cx="'+cx+'" cy="'+cy+'" rx="'+rx+'" ry="'+ry+'" fill="'+(i%2?'#64a466':'#7bb16c')+'"/>'+path('M'+(cx-rx+7)+' '+(cy-1)+'q'+rx+' -'+(ry*.9)+' '+(rx*1.4)+' -3','#b0ce82',3,'opacity=".8"')).join('')+'</g></g></g>';}
 function wall(u,v,w,d){let art=block(u,v,w,d,0,33,'#8a8a84','#657176','#485964');art+=tile(u-.13,v-.13,w+.26,d+.26,36,'#364c58');for(let i=1;i<(w>d?w:d);i++){const a=w>d?p(u+i,v+d,1):p(u+w,v+i,1),b=w>d?p(u+i,v+d,30):p(u+w,v+i,30);art+=line(a,b,'#a1aaa0',.7);}return art;}
 function roof(u,v,w,d,z){const top=z+39,ridgeA=p(u-.25,v+d/2,top),ridgeB=p(u+w+.25,v+d/2,top),a=p(u-.6,v-.7,z+3),b=p(u+w+.6,v-.7,z+3),c=p(u+w+.6,v+d+.7,z+3),e=p(u-.6,v+d+.7,z+3);let art=polygon([a,b,ridgeB,ridgeA],'url(#cy-roof-back)')+polygon([ridgeA,ridgeB,c,e],'url(#cy-roof-front)');art+=polygon([ridgeB,b,c],'#233a49');for(let i=0;i<=w*4;i++){const uu=u-.45+i*(w+.9)/(w*4);art+=line(p(uu,v+d/2,top+.6),p(uu,v+d+.6,z+4),'#738c94',1.5);art+=line(p(uu,v+d/2,top+.6),p(uu,v-.6,z+4),'#425d6c',1);}art+=line(ridgeA,ridgeB,'#a8b4b2',4)+line(e,c,'#7f9b9d',4)+line(b,c,'#657c88',3);art+=line(p(u-.6,v+d+.7,z),p(u+w+.6,v+d+.7,z),'#1b313f',5);return art;}
-function building(id,u,v,w,d,h=66){const pavilion=id==='pavilion',base=10,z=base+h;let art=shadow(u,v,w+.7,d+.6)+block(u-.25,v-.25,w+.5,d+.5,0,base,'#a0a29a','#707b7d','#596a72');art+=block(u,v,w,d,base,h,pavilion?'#655849':'#b4a893',pavilion?'#354a48':'#d0bca0',pavilion?'#2a3e41':'#ad9a83');
+function building(id,u,v,w,d,h=66){const pavilion=id==='pavilion',base=10,z=base+h;let art=shadow(u,v,w+.7,d+.6)+block(u-.25,v-.25,w+.5,d+.5,0,base,'#a0a29a','#707b7d','#596a72');art+=block(u,v,w,d,base,h,pavilion?'#655849':'#b4a893',pavilion?'#49766a':'#efd2a1',pavilion?'#32564f':'#c8a26f');
  if(!pavilion){for(let i=0;i<Math.floor(w);i++){const x=u+.22+i;art+=polygon([p(x,v+d,base+12),p(x+.65,v+d,base+12),p(x+.65,v+d,z-12),p(x,v+d,z-12)],'var(--cy-window)');for(let j=1;j<3;j++)art+=line(p(x+.65*j/3,v+d,base+12),p(x+.65*j/3,v+d,z-12),'#6b584d',1.2);for(let j=1;j<4;j++)art+=line(p(x,v+d,base+12+j*(h-24)/4),p(x+.65,v+d,base+12+j*(h-24)/4),'#6b584d',1.2);}
  for(let j=0;j<2;j++)art+=polygon([p(u+w,v+.3+j*1.4,base+15),p(u+w,v+1.25+j*1.4,base+15),p(u+w,v+1.25+j*1.4,z-15),p(u+w,v+.3+j*1.4,z-15)],'#b79164');
  }else art+=polygon([p(u+.3,v+d,base+10),p(u+w-.3,v+d,base+10),p(u+w-.3,v+d,z-10),p(u+.3,v+d,z-10)],'#213f43');
@@ -32,9 +34,9 @@ function pond(u,v){const center=p(u+1.8,v+1.4);let art=tile(u-.2,v-.1,4.6,3.8,2,
 function bird(u,v){const[x,y]=p(u,v);return`<g transform="translate(${x} ${y})"><path d="M0 0v-53m-20 0h40" stroke="#6c6d69" stroke-width="4" stroke-linecap="round"/><g transform="translate(0 -54)"><g class="courtyard-bird"><path d="m5-9 13 10-16-2" fill="#244453"/><ellipse cy="-16" rx="12" ry="16" fill="#29485d"/><ellipse cy="-10" rx="7" ry="8" fill="#d6ded5"/><ellipse cx="-4" cy="-23" rx="4" ry="6" fill="#efe6c5"/><ellipse cx="5" cy="-23" rx="4" ry="6" fill="#efe6c5"/><circle cx="-3" cy="-23" r="2" fill="#1b2b3a"/><circle cx="4" cy="-23" r="2" fill="#1b2b3a"/><path d="m-2-17 5-3 3 3-4 3Z" fill="#d6a366"/><path d="m-8-34 2-13h14l3 13" fill="#263946" stroke="#a6aaa0"/><ellipse cy="-34" rx="20" ry="3" fill="#263946" stroke="#a6aaa0"/><path d="m-5-1-2 2m12-2 2 2" stroke="#c3a87d" stroke-width="2"/></g></g></g>`;}
 function pots(u,v){let art='';for(let i=0;i<3;i++){const[x,y]=p(u+i*.65,v+i*.05);art+=`<g><ellipse cx="${x}" cy="${y+1}" rx="9" ry="3" fill="#1c3032" opacity=".3"/><path d="M${x-7} ${y-13}h14l-2 13h-10Z" fill="#ae8065"/><ellipse cx="${x}" cy="${y-13}" rx="8" ry="3" fill="#d0a17a"/>${line([x,y-14],[x,y-30],'#7f9c73',2)}${flower(x,y-31,i%2?'#e6d9c7':'#d6a4b8',3)}</g>`;}return art;}
 function tiger(u,v){const[x,y]=p(u,v);return`<g class="garden-tiger" transform="translate(${x} ${y})"><ellipse cy="3" rx="22" ry="6" fill="#142c32" opacity=".25"/><ellipse cy="-6" rx="20" ry="9" fill="#c59865"/><circle cx="-12" cy="-16" r="11" fill="#d7ac75"/><circle cx="-21" cy="-24" r="4" fill="#aa7f58"/><circle cx="-4" cy="-25" r="4" fill="#aa7f58"/><path d="M-17-15h3m5 0h3m-7-11v5m13 10 4 5m3-7 4 5m6 3q13 2 10-9" stroke="#5e5a49" stroke-width="2" stroke-linecap="round"/><ellipse cx="-12" cy="-10" rx="6" ry="4" fill="#e4c899"/></g>`;}
-export function courtyardHtml(state){
+function drawingHtml(state){
  const owns=new Set(state.unlocks.map(i=>i.id));
- const objects=[{depth:2,html:pine(.6,.7,.9)},{depth:11,html:pine(.3,11,1.15)},{depth:17,html:pine(16.5,.5,1.1)},
+ const objects=[{depth:24,html:farmer(9.7,13.7)},{depth:2,html:pine(.6,.7,.9)},{depth:11,html:pine(.3,11,1.15)},{depth:17,html:pine(16.5,.5,1.1)},
  {depth:20.6,html:bird(15.8,4.8)},{depth:22,html:planting(8.2,10,3.4,3,state.stage,state.plant)},
  {depth:23,html:state.completed?planting(3,13,3.4,2.3,4,state.previousPlant||{kind:'flower',color:'#d8a7bd'},true):stone(3.3,13.5,1.1)},
  {depth:27,html:pumpkin(10.9,15.3,.9)+pumpkin(11.7,15.9,.65)},{depth:10,html:pumpkin(7.5,2.5,.65)}];
@@ -46,13 +48,13 @@ export function courtyardHtml(state){
  if(owns.has('pots'))objects.push({depth:20,html:pots(11.8,7.8)});
  if(owns.has('tiger'))objects.push({depth:27,html:tiger(6.8,15.5)});
  let paving='';for(let i=2;i<16;i++)paving+=tile(i,7.2,1.0,1.5,2,'var(--cy-paving)',`opacity="${.52+(i%3)*.12}"`);for(let j=8.8;j<17;j+=1.3)paving+=tile(7.1,j,1.45,1.05,2,'var(--cy-paving)','opacity=".7"');
- let earth='';for(let i=0;i<34;i++){const u=1+(i*7.13)%16,v=1+(i*3.79)%16;if((v>6.8&&v<9)||(u>6.7&&u<9))continue;const[x,y]=p(u,v);earth+=`<ellipse cx="${x}" cy="${y}" rx="${4+i%4}" ry="${2+i%2}" fill="${i%2?'#a9af8b':'#56746b'}" opacity=".2"/>`;}
+ let earth='';for(let i=0;i<130;i++){const u=1+(i*7.13)%16,v=1+(i*3.79)%16;if((v>6.8&&v<9)||(u>6.7&&u<9))continue;const[x,y]=p(u,v);earth+=`<ellipse cx="${x}" cy="${y}" rx="${3+i%4}" ry="${1+i%2}" fill="${i%2?'#d8d897':'#3d704c'}" opacity=".2"/>`;}
  return'<div class="garden-scene" data-courtyard="v30" role="img" aria-label="Isometrischer koreanischer Garten mit '+state.unlocks.length+' gekauften Bauten und Dekorationen, '+state.completed+' Ernten und deiner aktuellen Pflanze"><svg class="courtyard-art" viewBox="0 0 960 730" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'+`
  <defs>
  <linearGradient id="cy-sky" x2="0" y2="1"><stop stop-color="var(--cy-sky-top)"/><stop offset="1" stop-color="var(--cy-sky-bottom)"/></linearGradient>
  <linearGradient id="cy-land" x2=".5" y2="1"><stop stop-color="var(--cy-grass-light)"/><stop offset="1" stop-color="var(--cy-grass-dark)"/></linearGradient>
- <linearGradient id="cy-roof-front" x2="0" y2="1"><stop stop-color="#4f6976"/><stop offset="1" stop-color="#243f51"/></linearGradient>
- <linearGradient id="cy-roof-back" x2="0" y2="1"><stop stop-color="#69818a"/><stop offset="1" stop-color="#354d61"/></linearGradient>
+ <linearGradient id="cy-roof-front" x2="0" y2="1"><stop stop-color="#60a4a7"/><stop offset="1" stop-color="#326174"/></linearGradient>
+ <linearGradient id="cy-roof-back" x2="0" y2="1"><stop stop-color="#7ab7b2"/><stop offset="1" stop-color="#427481"/></linearGradient>
  <radialGradient id="cy-light"><stop stop-color="#ffd18b" stop-opacity=".2"/><stop offset="1" stop-color="#ffd18b" stop-opacity="0"/></radialGradient>
  <radialGradient id="cy-halo"><stop stop-color="#d1b9e8" stop-opacity=".13"/><stop offset="1" stop-color="#d1b9e8" stop-opacity="0"/></radialGradient>
  <filter id="cy-soft" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="4"/></filter>
@@ -66,7 +68,7 @@ export function courtyardHtml(state){
  ${polygon([p(18,0),p(18,18),p(18,18,-30),p(18,0,-30)],'#293e4c')}
  ${tile(0,0,18,18,0,'url(#cy-land)')}
  ${tile(.3,.3,17.4,17.4,.4,'none','stroke="#acb294" stroke-opacity=".22" stroke-width="2"')}
- ${earth}${paving}
+ ${earth}${paving}${tile(7.8,2.4,5.5,3.5,2,'none','class="village-foundation" stroke="#f8e0a1" stroke-width="3" stroke-dasharray="8 6"')}
  ${tile(7.1,2.1,7,4.6,1,'#7d8c80','opacity=".3"')}
  ${wall(0,0,18,.3)}${wall(0,.3,.3,17.7)}
  ${stone(16,11,.8)}${stone(2,16,.9)}${stone(16,4,1.2)}
@@ -74,3 +76,6 @@ export function courtyardHtml(state){
  <g class="courtyard-fireflies" fill="#f3d8a5" opacity=".65"><circle cx="321" cy="393" r="2"/><circle cx="680" cy="431" r="1.6"/><circle cx="510" cy="554" r="1.7"/></g>
  </svg><div class="courtyard-caption"><span class="courtyard-caption-dot"></span>Dein Rückzugsort<span>Mit jedem Lerntag wächst etwas.</span></div></div>`;
 }
+
+function farmer(u,v){const[x,y]=p(u,v);return '<g transform="translate('+x+' '+y+')"><ellipse cy="3" rx="14" ry="5" fill="#203e32" opacity=".28"/><g class="village-farmer"><path d="m-5-9-3 11m13-11 3 11" stroke="#273b45" stroke-width="5" stroke-linecap="round"/><path d="M-9-29q9-6 18 0l3 21H-12Z" fill="#5ca5c7" stroke="#315c77" stroke-width="2"/><path d="M-10-23-15-13m24-10 8 8" stroke="#edc3a0" stroke-width="5" stroke-linecap="round"/><circle cy="-37" r="10" fill="#edc3a0"/><path d="M-10-38q-2-17 14-11 9 4 6 13l-4-7-9 2-7 4Z" fill="#27394c"/><path d="M-17-46q18-9 34 0" stroke="#c9a774" stroke-width="5" stroke-linecap="round"/><path d="M12-17h11v9H12Z" fill="#c1d093"/><path d="m23-14 7 5" stroke="#c1d093" stroke-width="3"/><path class="village-waterdrop" d="m31-7 2 4" stroke="#a9e1df" stroke-width="2" stroke-linecap="round"/></g></g>';}
+export function courtyardHtml(state){const markup=drawingHtml(state),start=markup.indexOf('<svg'),end=markup.lastIndexOf('</svg>')+6;return villageMapHtml(state,markup.slice(start,end));}
