@@ -1,5 +1,8 @@
 # Prüfbericht
 
+## Lernfeedback und Belohnungssammlung: Beta 0.3.4
+
+Serien bei 5/10/15 richtigen Antworten, 5-Karten-Etappen, Comeback nach vorheriger Fehlbewertung und Ghost-Freigabe. Dauerhafte Sammlung mit 25/75/150 Wort-Tages-Lernschritten, fünf Lerntagen ohne Ablaufdatum für Teehäuschen, manuelle Freischaltung/Auswahl und tatsächliche Dorf-Dekoration. Datenbank erweitert auf Version 7 (rewards-Store), JSON-Backup mit validiertem optionalem rewardState. Bestehender v6-Lernstand samt SRS, Schwer-Markierung, Garten-Ledger, Ernte und gebauter Laterne nachweislich erhalten. Echte Browserprüfung: sichtbare 5er-Serie, Unterbrechung durch Fehler, Undo, Comeback beim Tippen, Ghost ohne Bewertung, normale/reduzierte Bewegung, Collection-Claims/Equip, reale Dorf-Darstellung, Münzen unverändert, frischer JSON-Restore, ältere Vokabelpakete, Offline-Neustart und Home-Navigation. Reine Prüfungen für Wort-/Tages-Deduplizierung über Richtungen/Kategorien, falsche Antworten, fehlende historische Vergütung, Projektziele und strenge Backup-Validierung. Offline-Update mit fehlenden/veralteten Dateien bestanden. Mobile Vorschauen visuell geprüft. Kein physischer iPhone-/iPad-Test.
 ## Home-Navigation: Beta 0.3.3
 
 Lernen-Tab und Logo führen zur Startseite und leeren nur die laufende Sitzung. Mit echten IndexedDB-Daten geprüft: unbeantwortete/aufgedeckte Karten, teilweise bewertete Runde, nicht abgeschickte Texteingabe, vollständiges Rundenergebnis, Umweg über anderen Tab, Logo, Scrollposition, gespeicherte Historie/SRS/Gartenpunkte/Runden sowie Offline-Neustart. Keine zusätzliche Wertung oder erfundene vollständige Runde beim Verlassen. Navigation respektiert bestehende Speichersperren. Offline-Updater bestanden. Datenbank weiterhin Version 6; kein physischer iPhone-Test.
@@ -111,6 +114,7 @@ Geprüft am 9. Oktober 2026 mit Node.js 24 und einem echten headless Microsoft-E
 Bestanden: Antwortnormalisierung und Alternativen, korrekte/falsche Wiederholungsintervalle, CSV mit Unicode, Anführungszeichen und mehrzeiligen Feldern, Ablehnung ungültiger Eingaben, Beispielvokabeln, Hinzufügen/Bearbeiten/Löschen, IndexedDB-Persistenz nach Neuladen, schriftliche Abfragen in beiden Richtungen, JSON-Download und Wiederimport, Statistik, keine horizontale Überbreite, Service-Worker-Aktivierung, Neuladen und Vokabelsuche bei abgeschaltetem Netzwerk. Keine JavaScript-Seitenfehler im Ablauf. JavaScript-Syntaxprüfung bestanden.
 
 Die mobile Oberfläche wurde zusätzlich als Screenshot geprüft. Kein Test auf physischem iPhone oder Safari durchgeführt. Die Home-Bildschirm-Installation und der abschließende Flugmodus-Test auf dem eigenen iPhone bleiben erforderlich. Keine öffentliche Bereitstellung vorgenommen; die Installationsanleitung beschreibt die tatsächlichen Schritte zu GitHub Pages.
+
 
 
 
