@@ -1,8 +1,8 @@
-const CACHE='hangul-beta-0.3.2-ghost1';
+const CACHE='hangul-beta-0.3.3-home1';
 const FILES=['./','./index.html','./style.css','./app.js','./hard.mjs','./season.mjs','./courtyard.mjs','./village.mjs','./gat-bird.svg','./gat-pumpkin.svg','./halloween-garden.svg','./garden.mjs','./farm.mjs','./farm-view.mjs','./journey.mjs','./journey-view.mjs','./hanok-garden.png','./dashboard.mjs','./touch.mjs','./core.mjs','./learning.mjs','./swipe.mjs','./statistics.mjs','./emojis.mjs','./reactions.mjs','./feedback.mjs','./mnemonics.mjs','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png'];
 async function freshFiles(){
  const responses=await Promise.all(FILES.map(async file=>{const url=new URL(file,self.location.href);url.searchParams.set('__hangul_fresh',CACHE);const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw Error('App-Datei fehlt: '+file);return[file,response];}));
- if(!(await responses.find(([f])=>f==='./app.js')[1].clone().text()).includes('HANGUL_GHOST_APP_BETA_0_3_2'))throw Error('App-Version ist noch nicht vollständig veröffentlicht.');
+ if(!(await responses.find(([f])=>f==='./app.js')[1].clone().text()).includes('HANGUL_HOME_APP_BETA_0_3_3'))throw Error('App-Version ist noch nicht vollständig veröffentlicht.');
  if(!(await responses.find(([f])=>f==='./feedback.mjs')[1].clone().text()).includes('flashAnswerHtml'))throw Error('Auswertungsdatei ist noch nicht aktuell.');
  if(!(await responses.find(([f])=>f==='./style.css')[1].clone().text()).includes('HANGUL_VILLAGE_STYLE_BETA_0_3_1'))throw Error('Die Darstellung ist noch nicht aktuell.');
  if(!(await responses.find(([f])=>f==='./dashboard.mjs')[1].clone().text()).includes('HANGUL_DASHBOARD_V20'))throw Error('Die Kategorien-Datei fehlt.');
