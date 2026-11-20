@@ -1,6 +1,6 @@
-// HANGUL_PACKS_BETA_0_3_6
+// HANGUL_PACKS_BETA_0_3_7
 const PACKS=[
- {id:'chapter-4-6',title:'Chapter 4-6',count:88,file:'Chapter-4-6.json'},
+ {id:'chapter-4-6',title:'Chapter 4-6',count:125,file:'Chapter-4-6.json'},
  {id:'chapter-7-10',title:'Chapter 7-10',count:96,file:'Chapter-7-10.json'}
 ];
 export function packsHtml(){return `<section aria-labelledby="packsTitle"><h2 id="packsTitle">Vokabelpakete</h2><p>Neue Wörter für deine nächste Lernrunde. Mit Englisch/Deutsch, Umschrift, Aussprachehinweisen und Eselsbrücken.</p>${PACKS.map(p=>`<div class="card"><div class="eyebrow">${p.count} KARTEN</div><h3>${p.title}</h3><button class="full" data-pack="${p.id}">${p.title} hinzufügen</button></div>`).join('')}<p class="hint">Einmal tippen: Die Karten erscheinen direkt in der gleichnamigen Kategorie. Vorhandene Karten und Lernstände bleiben erhalten. Nach „Offline bereit“ geht das auch ohne Internet.</p><p class="hint" id="packStatus" role="status" aria-live="polite"></p></section>`;}
