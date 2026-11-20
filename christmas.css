@@ -1,0 +1,65 @@
+/* HANGUL_CHRISTMAS_STYLE_BETA_0_3_8 */
+.courtyard-christmas{display:none}
+:root[data-season=christmas]{--accent:#e9ce96;--muted:#abc3bf;background:#0b1c21;color:#f2f3e9}
+[data-season=christmas] body{background:radial-gradient(ellipse at 100% 0,#224f444d,transparent 650px),#0b1c21;color:#f2f3e9}
+[data-season=christmas] body::before{content:"";position:fixed;inset:-80px 0 0;pointer-events:none;z-index:0;opacity:.35;background-image:radial-gradient(circle at 14% 18%,#fff 0 1px,transparent 2px),radial-gradient(circle at 75% 46%,#fff 0 1px,transparent 2px),radial-gradient(circle at 38% 73%,#e7f4ff 0 1.5px,transparent 2.5px);background-size:190px 270px,270px 390px,330px 430px;animation:winter-snow 24s linear infinite}
+[data-season=christmas] header,[data-season=christmas] main{position:relative;z-index:1}
+[data-season=christmas] header{border-bottom:1px solid #e7cb8b17}
+[data-season=christmas] .brand small{color:#c2cdb7}
+[data-season=christmas] .badge{background:#17352f;border-color:#587263;color:#ecd5a6}
+[data-season=christmas] nav{background:#102825f5;border-color:#506359}
+[data-season=christmas] nav .active{background:#3d5140;color:#ffe4ad;box-shadow:inset 0 1px #dfbd7238}
+[data-season=christmas] .card,[data-season=christmas] dialog{background:#142e30;border-color:#36514b;color:#f2f3e9}
+[data-season=christmas] .hero,[data-season=christmas] .home-hero{background:linear-gradient(135deg,#254a3c,#132f35);border-color:#61735a;box-shadow:inset 0 1px #f0d7a322}
+[data-season=christmas] .home-hero{position:relative;overflow:hidden}
+[data-season=christmas] .home-hero::before{content:"✦　·　✧　·　✦　·　✧";display:block;position:absolute;right:16px;top:8px;color:#f0d7a3;opacity:.5;font-size:14px;pointer-events:none}
+[data-season=christmas] .home-title>span,[data-season=christmas] .garden-title span{color:#e8d3a8}
+[data-season=christmas] button{background:#2b4846;color:#f2f3e9}
+[data-season=christmas] .primary,[data-season=christmas] #start,[data-season=christmas] #gardenLearn{background:#ecd4a0;color:#263c32;border-color:#b59760}
+[data-season=christmas] button.quiet{background:transparent;color:#d8e9df}
+[data-season=christmas] .danger{background:#4b2d35;color:#ffc2bf}
+[data-season=christmas] input,[data-season=christmas] select,[data-season=christmas] textarea{background:#102527;border-color:#4b6960;color:#f1f3e9}
+[data-season=christmas] input::placeholder,[data-season=christmas] textarea::placeholder{color:#91a9a6}
+[data-season=christmas] a{color:#e9ce96}
+[data-season=christmas] .eyebrow{color:#cbd2ad}
+[data-season=christmas] .chip{background:#31493b;color:#eed9b2}
+[data-season=christmas] .season-panel{background:linear-gradient(120deg,#263c30,#183431);border-color:#6e7151}
+[data-season=christmas] .season-panel b{color:#f3deac}
+[data-season=christmas] .season-panel .eyebrow{color:#c6cca7}
+[data-season=christmas] .season-panel small{color:#c4d4c7}
+[data-season=christmas] .season-panel button{background:#61343c;border-color:#946566;color:#ffe6c2}
+[data-season=christmas] .garden-peek,[data-season=christmas] .reward-overview{background:linear-gradient(110deg,#254339,#183238);border-color:#62745a;color:#f3dfb5}
+[data-season=christmas] .garden-peek-art{background:#365c4c}
+[data-season=christmas] .study-category,[data-season=christmas] .category-tile,[data-season=christmas] .reward-item{background:#193638;border-color:#3e5e53}
+[data-season=christmas] .study-category.selected,[data-season=christmas] .reward-item.is-unlocked{background:#344b35;border-color:#ad9968}
+[data-season=christmas] .reward-project{background:linear-gradient(135deg,#314a35,#183737);border-color:#8b865d}
+[data-season=christmas] .project-days .done{background:#e0ca91;color:#23483a;border-color:#f5e1af;box-shadow:0 3px #9d8859}
+[data-season=christmas] .learning-reward{background:#284838;border-color:#d9bc80;color:#fff1ca}
+[data-season=christmas] .hard-toggle.is-hard{background:#51333c;color:#ffddd1;border-color:#a36b72}
+[data-season=christmas] .flash-card{background:linear-gradient(150deg,#183c39,#142e34);border-color:#668171}
+[data-season=christmas] .flash-card-hint{color:#b2c8be}
+[data-season=christmas] .flash-card:not(.swipe-known):not(.swipe-unknown):focus-visible{outline-color:#ead3a0}
+[data-season=christmas] .confetti-layer i{background:#efd39a!important}
+[data-season=christmas] .confetti-layer i:nth-child(3n){background:#bf6370!important}
+[data-season=christmas] .confetti-layer i:nth-child(3n + 1){background:#9ed4bb!important}
+[data-season=christmas] .garden-scene.village-game[data-courtyard]{--cy-sky-top:#142c3b;--cy-sky-bottom:#3d6570;--cy-grass-light:#edf3ec;--cy-grass-dark:#a7c6c9;--cy-paving:#819da2;--cy-window:#ffe0a0;--cy-moon:#f8e7ba;background:#183b44;border-color:#9ab7b3;border-bottom-color:#527a7c}
+[data-season=christmas] .courtyard-christmas{display:block}
+[data-season=christmas] .courtyard-halloween{display:none!important}
+[data-season=christmas] .courtyard-art #cy-roof-front stop:first-child{stop-color:#adcecf}
+[data-season=christmas] .courtyard-art #cy-roof-front stop:last-child{stop-color:#52868b}
+[data-season=christmas] .courtyard-art #cy-roof-back stop:first-child{stop-color:#e5f0e8}
+[data-season=christmas] .courtyard-art #cy-roof-back stop:last-child{stop-color:#8ab1b2}
+[data-season=christmas] .village-place,[data-season=christmas] .village-money{background:#173a3beb;border-color:#9ba581;color:#f4e3be}
+[data-season=christmas] .village-place small{color:#cee3d9}
+[data-season=christmas] .winter-light{animation:winter-glow 3s ease-in-out infinite alternate}
+[data-season=christmas] .winter-light:nth-child(2n){animation-delay:-1.5s}
+[data-season=christmas] .winter-flakes{animation:winter-flakes 16s linear infinite;pointer-events:none}
+@keyframes winter-snow{to{transform:translateY(80px)}}
+@keyframes winter-glow{from{opacity:.55}to{opacity:1}}
+@keyframes winter-flakes{from{transform:translateY(-12px)}to{transform:translateY(35px)}}
+@media(prefers-reduced-motion:reduce){[data-season=christmas] body::before,[data-season=christmas] .winter-light,[data-season=christmas] .winter-flakes{animation:none!important}}
+
+/* HANGUL_SNOWMAN_STYLE_BETA_0_3_9 */
+[data-season=christmas] .brand .brand-bird{width:81px;height:54px;flex-basis:81px;object-fit:contain}
+@media(max-width:540px){[data-season=christmas] .brand .brand-bird{width:66px;height:44px;flex-basis:66px}}
+@media(max-width:370px){[data-season=christmas] header{gap:8px;padding-left:14px;padding-right:14px}[data-season=christmas] .brand{gap:8px}[data-season=christmas] .brand>span{font-size:21px}[data-season=christmas] .badge{font-size:10px;padding:7px 8px}}
